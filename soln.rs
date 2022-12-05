@@ -7,8 +7,7 @@
 
 use std::ops::RangeInclusive;
 
-use aoc::*;
-use aoc_reparse::*;
+use aoc::{*, reparse::*};
 
 trait RangeInclusiveExt<Idx> {
     fn contains_range(&self, other: &RangeInclusive<Idx>) -> bool;
