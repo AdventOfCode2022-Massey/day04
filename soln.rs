@@ -23,7 +23,7 @@ where
     }
 
     fn laps_range(&self, other: &RangeInclusive<Idx>) -> bool {
-        self.contains(other.start()) || self.contains_range(other)
+        self.contains(other.start())
     }
 }
 
