@@ -1,9 +1,11 @@
 # Advent of Code 2022: Day 4
-Bart Massey
+Ben and Bart Massey
 
 ---
 
-*Your notes here.*
+Having a fancy regex-based parser for the input made things
+a lot easier here. The "obvious" plan of using actual Rust
+`Range`s turned out to be a good one.
 
 ---
 

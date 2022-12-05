@@ -3,14 +3,18 @@
 // for license terms.
 
 //! Advent of Code Day 4.  
-//! Bart Massey 2022
+//! Ben and Bart Massey 2022
 
 use std::ops::RangeInclusive;
 
 use aoc::{*, reparse::*};
 
+/// Extension trait for comparing ranges with ranges.
 trait RangeInclusiveExt<Idx> {
+    /// True iff this range contains the `other` range.
     fn contains_range(&self, other: &RangeInclusive<Idx>) -> bool;
+    /// True iff the tail of thhis range contains the head
+    /// of the `other` range.
     fn laps_range(&self, other: &RangeInclusive<Idx>) -> bool;
 }
 
@@ -28,6 +32,7 @@ where
 }
 
 fn main() {
+    // Parse the input into inclusive ranges.
     let parser = Reparse::new(r"([0-9]+)-([0-9]+),([0-9]+)-([0-9]+)");
     let input = input_lines().map(|line| {
         let parsed = parser.parse(&line).unwrap();
@@ -37,6 +42,7 @@ fn main() {
         );
         result
     });
+
     match get_part() {
         Part1 => {
             let total = input
